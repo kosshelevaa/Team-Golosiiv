@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,32 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: {
-          DEFAULT: "#0F141C",
-          card: "#161D2A",
-          sidebar: "#121822",
-          input: "#1B2434",
-          hover: "#222D40",
+        church: {
+          bg: "#131B2A",       // Основной фон сайта
+          card: "#1E2738",     // Фон карточек
+          hover: "#283449",    // Цвет при наведении
+          border: "#2A364E",   // Границы
+          primary: "#2F5B85",  // Синие кнопки
+          success: "#059669",  // Зеленые статусы (Підтверджено)
+          warning: "#D97706",  // Желтые статусы (Потрібна заміна)
         },
-        text: {
-          primary: "#F3F4F6",
-          secondary: "#9CA3AF",
-          muted: "#6B7280",
-        },
-        status: {
-          confirmed: "#10B981",
-          substitute: "#F59E0B",
-          vacant: "#3B82F6",
-          danger: "#EF4444",
-        },
-        border: {
-          subtle: "#1E293B",
-          highlight: "#334155",
-        }
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        serif: ["var(--font-playfair)", "serif"],
       },
     },
   },
   plugins: [],
-};
-
-export default config;
+} satisfies Config;
